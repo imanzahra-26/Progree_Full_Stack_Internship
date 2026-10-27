@@ -1,0 +1,155 @@
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  background: rgba(254, 254, 254, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== CONTAINER ===== */
+.navbar-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== LOGO ===== */
+.navbar-logo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.navbar-logo .dot {
+  color: var(--accent);
+}
+
+/* ===== NAV LINKS (desktop) ===== */
+.navbar-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.navbar-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text);
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== NEW: HAMBURGER BUTTON ===== */
+/* Hidden on desktop, shown on mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 110; /* Above the dropdown menu */
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* When menu is open, animate the bars into an X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ===== NEW: RESPONSIVE (MOBILE) ===== */
+@media (max-width: 768px) {
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide the desktop layout — turn into dropdown */
+  .navbar-links {
+    position: absolute;
+    top: 100%;               /* Just below navbar */
+    right: 0;
+    flex-direction: column;  /* Stack links vertically */
+    gap: 20px;
+    width: 240px;
+    padding: 24px 24px 28px;
+    
+    /* 👇 THE FIX: Use variables that work in BOTH modes 👇 */
+    background: var(--card-bg, var(--surface, #ffffff)); 
+    color: var(--text-color, var(--text, #1a1a2e));
+    
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 0 0 16px 16px;
+
+    /* Hide by sliding off-screen to the right */
+    transform: translateX(105%);
+    transition: transform 0.35s ease;
+  }
+
+  /* 👇 NEW FIX: Force the text to match the theme inside the dropdown 👇 */
+  .navbar-links a {
+    color: var(--text-color, var(--text, #1a1a2e));
+  }
+
+  /* When menuOpen === true, slide in */
+  .navbar-links.active {
+    transform: translateX(0);
+  }
+
+  /* Slightly bigger tap targets on mobile */
+  .navbar-links a {
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+}

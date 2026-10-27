@@ -1,0 +1,123 @@
+/* ===== CONTACT SECTION ===== */
+.contact {
+  padding: 100px 0;
+  background: var(--bg);            /* Light gray background */
+}
+
+.contact-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== GRID LAYOUT ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ===== LEFT: TEXT ===== */
+.contact-text h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.contact-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.contact-highlight {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fce7f3 100%);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--accent);
+  font-size: 0.95rem !important;
+}
+
+.contact-highlight strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== RIGHT: CONTACT CARDS ===== */
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.contact-value {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-all;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact {
+    padding: 70px 0;
+  }
+  .contact-links {
+    grid-template-columns: 1fr;         /* Single column on mobile */
+  }
+  .contact-text h3 {
+    font-size: 1.5rem;
+  }
+}
+/* --- DARK MODE FIX FOR CONTACT --- */
+body.dark-theme .contact-highlight {
+  background: var(--surface) !important;
+  border-left-color: var(--accent) !important;
+}
+body.dark-theme .contact-card {
+  background: var(--surface) !important;
+}

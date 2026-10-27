@@ -1,0 +1,18 @@
+GitHub Repository:
+https://github.com/imanzahra-26/ecommerce-website
+
+Tech Stack:
+React (Vite), Node.js, Express.js, MySQL, JWT, bcrypt
+
+Description:
+Full-stack e-commerce platform with product catalog, live search,
+category filters, shopping cart, JWT authentication, and order
+management using SQL transactions (atomic checkout).
+
+Features:
+- 8 seeded products with search & filters
+- Add to cart with quantity controls
+- Secure checkout (all-or-nothing transaction)
+- Order history + order details
+- Protected routes with JWT
+- Data isolation per user

@@ -1,0 +1,116 @@
+/* ===== ABOUT SECTION ===== */
+.about {
+  padding: 100px 0;                    /* Top + bottom spacing */
+  background: var(--bg-alt);              /* Clean white */
+}
+
+.about-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===== GRID LAYOUT ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;    /* Text wider than card */
+  gap: 60px;
+  align-items: start;
+}
+
+/* ===== LEFT: TEXT ===== */
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== RIGHT: FACTS CARD ===== */
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.facts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.facts-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.fact-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.fact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.fact-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about {
+    padding: 70px 0;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;        /* Stack on mobile */
+    gap: 40px;
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+}
+
+/* --- DARK MODE FIX FOR ABOUT CARD --- */
+body.dark-theme .about-card {
+  background: var(--surface) !important;
+}

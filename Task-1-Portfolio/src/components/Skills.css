@@ -1,0 +1,133 @@
+/* ===== SKILLS SECTION ===== */
+.skills {
+  padding: 100px 0;
+  background: var(--bg);           /* Light gray background — contrast with About */
+}
+
+.skills-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Reuse section-header styles (already defined in About.css but let's repeat) */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===== SKILLS GRID ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+}
+
+/* ===== SKILL CARD ===== */
+.skill-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient at the top of the card on hover */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  transform: scaleX(0);                  /* Hidden by default */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);           /* Lift up */
+  box-shadow: var(--shadow-lg);          /* Bigger glow */
+  border-color: transparent;
+}
+
+.skill-card:hover::before {
+  transform: scaleX(1);                  /* Gradient bar expands */
+}
+
+/* ===== ICON ===== */
+.skill-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+/* ===== SKILL NAME ===== */
+.skill-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* ===== CATEGORY LABEL ===== */
+.skill-category {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}
+
+@media (max-width: 640px) {
+  .skills {
+    padding: 70px 0;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 14px;
+  }
+  .skill-card {
+    padding: 20px 14px;
+  }
+  .skill-icon {
+    font-size: 1.8rem;
+  }
+  .skill-name {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- DARK MODE FIX FOR SKILLS CARDS --- */
+body.dark-theme .skill-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}

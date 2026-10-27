@@ -1,0 +1,12 @@
+GitHub Repository:
+https://github.com/imanzahra-26/portfolio
+
+Tech Stack:
+React (Vite), Framer Motion, Custom CSS
+
+Live Demo:
+https://portfolio-mu-ten-lbonphmhpq.vercel.app/
+
+Description:
+A responsive personal portfolio website showcasing skills, projects,
+and contact information with smooth Framer Motion animations.

@@ -1,0 +1,142 @@
+/* ===== HERO SECTION ===== */
+.hero {
+  min-height: calc(100vh - 70px);       /* Full height minus navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--bg);              /* Pure clean white */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== CONTENT ===== */
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- GREETING --- */
+.hero-greeting {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+/* --- BIG NAME --- */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+/* --- ROLE --- */
+.hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* --- DESCRIPTION --- */
+.hero-description {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* --- BUTTONS --- */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* --- FLOATING CHARACTER --- */
+.hero-character {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  font-size: 2rem;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero {
+    padding: 30px 20px;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .hero-character {
+    font-size: 1.5rem;
+    right: 10%;
+  }
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.9rem;
+  }
+}
